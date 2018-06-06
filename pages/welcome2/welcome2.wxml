@@ -1,0 +1,18 @@
+<view class='con'>
+  <image class='logo' src='{{imgLogo}}'></image>
+  <form class='from-login' bindsubmit="formSubmit" report-submit>
+    <view class='form-item'>
+      <label for='mobile'>
+        <image src='{{imgPerson}}'></image>
+      </label>
+      <input type='text' maxlength='11' id='mobile' name='userName' placeholder='请输入账号'></input>
+    </view>
+    <view class='form-item'>
+      <label for='password'>
+        <image src='{{imgLock}}'></image>
+      </label>
+      <input type='text' name='password' id='password' password placeholder='请输入密码'></input>
+    </view>
+    <button formType="submit">登录</button>
+  </form>
+</view>

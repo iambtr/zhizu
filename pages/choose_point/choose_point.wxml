@@ -1,0 +1,14 @@
+<view class='phone list'>
+  <text>一级网点:</text>
+  <picker class='input-text point' bindchange="companyChange" value="{{companyIndex}}" range-key="companyName" range="{{companyArray}}">
+    <view>{{companyArray[companyIndex].companyName}}</view>
+  </picker>
+  <text class='fresh-car' catchtap='getCompany'>刷新公司</text>
+</view>
+<view class='phone list'>
+  <text>二级网点:</text>
+  <picker class='input-text point' bindchange="pointChange" value="{{pointIndex}}" range-key="companyName" range="{{pointArray}}">
+    <view>{{pointArray[pointIndex].companyName}}</view>
+  </picker>
+</view>
+  <button class='sure' catchtap='surePoint'>开始收车</button>

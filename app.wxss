@@ -1,0 +1,20 @@
+page{
+  min-height: 100%;
+  box-sizing: border-box;
+}
+view{
+   box-sizing: border-box; 
+  font-size: 32rpx
+}
+ ::-webkit-scrollbar { 
+      width :  3px ; 
+} 
+::-webkit-scrollbar-track { 
+      background :  transparent ; 
+      border-radius:  0px ; 
+} 
+         
+::-webkit-scrollbar-thumb { 
+      border-radius:  1px ; 
+      background :  #999 ; 
+}    

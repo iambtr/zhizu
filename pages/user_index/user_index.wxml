@@ -1,0 +1,75 @@
+<!--pages/user_index/user_index.wxml-->
+<view class='con'>
+  <view class='tab-header'>
+    <view class='main' catchtap='tabCarMenu'>
+      <view class='item {{tab===""? "active":""}}'>{{role==1?"录入":"收车"}}</view>
+      <view class='item {{tab==="tab"? "active":""}}' id='tab'>列表 {{carLists.length>0?carLists.length+'台':''}}</view>
+    </view>
+  </view>
+  <view class='body-box {{tab}}'>
+    <view class='tab-map'>
+      <view>
+         <!-- <view hidden='{{modify}}' class='mode list agree {{mode?"insurance":""}}'>
+          <switch bindchange="beQuick" checked='{{mode}}' color='#ffd200' /> 快速录车模式
+        </view>  -->
+        <!--收车  -->
+        <view class='phone list' wx:if='{{role==1}}'>
+          <text>车型:</text>
+          <picker class='input-text point' bindchange="carTypeChange" value="{{typeIndex}}" range="{{carArray}}">
+            <view>{{carArray[typeIndex]}}</view>
+          </picker>
+          <text class='fresh-car' catchtap='freshCar'>刷新车型</text>
+        </view>
+        <view class='phone list' wx:if='{{role==1}}'>
+          <text>号牌:</text>
+          <input class='input-text' id='licensePlate' value='{{licensePlate}}' placeholder='请输入号牌' bindinput='numInput'></input>
+        </view>
+        <view class='phone list'>
+          <text>车架号:</text>
+          <input class='input-text' id='frameNo' value='{{frameNo}}' placeholder='请输入车架号' bindinput='numInput'></input>
+          <image src='{{imgScan}}' catchtap='scanCarCode' id='iframeNo'></image>
+        </view>
+        <view class='phone list' wx:if='{{role==1}}'>
+          <text>中控号:</text>
+          <input class='input-text' id='vcuNo' value='{{vcuNo}}' placeholder='请输入中控号' bindinput='numInput'></input>
+          <image src='{{imgScan}}' catchtap='scanCarCode' id='ivcuNo'></image>
+        </view>
+      </view>
+      <view class='option' wx:if='{{modify}}'>
+        <button catchtap='cancelModify'>取消修改</button>
+        <button catchtap='sureModify'>确定修改</button>
+      </view>
+      <view wx:else>
+        <view class='option'>
+          <button catchtap='resetData'>重置</button>
+          <button catchtap='addCar'>确定</button>
+        </view>
+      </view>
+       <view wx:if='{{!role}}' class='repoint submit-sys' catchtap='repoint'>网点重选</view>
+    </view>
+    <view class='tab-detail'>
+      <scroll-view scroll-y scroll-x='{{role==1}}' class='{{role==0?"mode":""}} device-list' scroll-left='{{role==1?"250":"0"}}'>
+        <view class='list-title'>
+           <text wx:if='{{role==1}}'>号牌</text> 
+          <text>车架号</text>
+           <text wx:if='{{role==1}}'>中控号</text> 
+           <text wx:if='{{role==1}}'>车型</text> 
+          <text>操作</text>
+        </view>
+        <block wx:for='{{carLists}}' wx:key='{{item.frameNo}}'>
+          <view class='list-tr'>
+            <text class='list-td' wx:if='{{role==1}}'>{{item.licensePlate}}</text>
+            <text class='list-td'>{{item.frameNo}}</text>
+            <text class='list-td' wx:if='{{role==1}}'>{{item.vcuNo}}</text>
+            <text class='list-td' wx:if='{{role==1}}'>{{item.vehicleType}}</text>
+            <view class='list-td option2'>
+              <text id='{{item.frameNo}}' catchtap='modifyItem'>修改</text>
+              <text id='{{item.frameNo}}' catchtap='removeItem'>删除</text>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      <view class='submit-sys' catchtap='submitList'>提交</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+page {
+  height: 100%;
+}
+.con {
+  height: 100%;
+  text-align: center;
+  padding-top: 78rpx;
+  position: relative;
+}
+.con .logo {
+  width: 236rpx;
+  height: 236rpx;
+}
+.con .from-login {
+  display: block;
+  padding: 60rpx 62rpx 30rpx 62rpx;
+}
+.con .from-login .form-item {
+  box-sizing: border-box;
+  border: 4rpx solid #cccccc;
+  border-radius: 45rpx 45rpx;
+  background-color: #ffffff;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-bottom: 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 14px;
+}
+.con .from-login .form-item label {
+  width: 76rpx;
+  padding-left: 34rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  flex-grow: 0;
+}
+.con .from-login .form-item image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 34rpx;
+}
+.con .from-login .form-item input {
+  flex-grow: 1;
+}
+.con .from-login button {
+  margin-top: 82rpx;
+  background-color: #d7193c;
+  color: #ffffff;
+  font-size: 34rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  letter-spacing: 4px;
+}
+

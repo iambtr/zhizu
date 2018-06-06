@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/welcome2/welcome2",
+    "pages/choose_point/choose_point",
+    "pages/user_index/user_index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "智管家",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 5000
+  }
+}
