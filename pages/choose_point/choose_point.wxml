@@ -3,7 +3,7 @@
   <picker class='input-text point' bindchange="companyChange" value="{{companyIndex}}" range-key="companyName" range="{{companyArray}}">
     <view>{{companyArray[companyIndex].companyName}}</view>
   </picker>
-  <text class='fresh-car' catchtap='getCompany'>刷新公司</text>
+  <text class='fresh-car' catchtap='getCompany'>刷新租赁商</text>
 </view>
 <view class='phone list'>
   <text>二级网点:</text>

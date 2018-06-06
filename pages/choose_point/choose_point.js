@@ -53,32 +53,36 @@ Page({
     let that = this
     api.get('site/getByCompanyId', { companyId })
       .then(({ items }) => {
+        if(items.length==0){
+          alertTip('该一级网点下不存在二级网点，请联系管理员')
+        }
         that.setData({
           pointArray: items
         })
       })
       .catch(err => {
         alertTip(err)
-        that.setData({
-          dataError: true
-        })
       })
   },
   surePoint(){
     let point = this.data.pointArray[this.data.pointIndex]
-    wx.showModal({
-      title: '提示',
-      content: `确认您的二级网点是${point.companyName}`,
-      success: function (res) {
-        if (res.confirm) {
-          wx.setStorageSync('siteId', point.id)
-         wx.redirectTo({
-           url: '/pages/user_index/user_index',
-         })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+    if (point && point.companyName){
+      wx.showModal({
+        title: '提示',
+        content: `确认您的二级网点是${point.companyName}`,
+        success: function (res) {
+          if (res.confirm) {
+            wx.setStorageSync('siteId', point.id)
+            wx.redirectTo({
+              url: '/pages/user_index/user_index',
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
         }
-      }
-    })
+      })
+      return
+    }
+    alertTip('二级网点异常，请联系管理员')
   }
 })

@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "智管家",
+    "navigationBarTitleText": "智租管家",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
