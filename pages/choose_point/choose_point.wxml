@@ -11,4 +11,4 @@
     <view>{{pointArray[pointIndex].companyName}}</view>
   </picker>
 </view>
-  <button class='sure' catchtap='surePoint'>开始收车</button>
+  <button class='sure' catchtap='surePoint'>开始交车</button>

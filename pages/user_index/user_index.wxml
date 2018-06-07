@@ -2,7 +2,7 @@
 <view class='con'>
   <view class='tab-header'>
     <view class='main' catchtap='tabCarMenu'>
-      <view class='item {{tab===""? "active":""}}'>{{role==1?"录入":"收车"}}</view>
+      <view class='item {{tab===""? "active":""}}'>{{role==1?"录车":"交车"}}</view>
       <view class='item {{tab==="tab"? "active":""}}' id='tab'>列表 {{carLists.length>0?carLists.length+'台':''}}</view>
     </view>
   </view>

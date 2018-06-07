@@ -88,7 +88,7 @@ Page({
     })
 
     wx.setNavigationBarTitle({
-      title: `${role==1?"录车":"收车"}操作员：${user.name}`
+      title: `${role==1?"录车":"交车"}操作员：${user.userName}`
     })
   },
   onUnload() {
